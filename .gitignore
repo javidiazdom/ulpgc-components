@@ -1,7 +1,8 @@
 /*
+!.gitignore
 /*/
 !dist/
-!dist/*
+dist/*
+!dist/fonts
 !./dist/ulpgc-header.min.js
 !./dist/ulpgc-footer.min.js
-!.gitignore
