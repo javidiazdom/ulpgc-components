@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm run build:wc",
     "lint": "vue-cli-service lint",
-    "build:wc": "vue-cli-service build --target wc --name ulpgc-components src/components/*.vue"
+    "build:wc": "vue-cli-service build --target wc --name ulpgc-header src/components/ulpgc-header.vue & vue-cli-service build --target wc --name ulpgc-footer src/components/ulpgc-footer.vue"
   },
   "dependencies": {
     "core-js": "^3.8.3",
