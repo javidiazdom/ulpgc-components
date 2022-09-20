@@ -35,9 +35,4 @@ export default {
 <style>
     @charset "UTF-8";
     @import "https://cdn.ulpgc.es/ulpgcds/1.0/css/ulpgcds.css";
-
-    @font-face {
-        font-family: "ULPGC-icon";
-        src: url(@/assets/ULPGC-icon.ttf);
-    }
 </style>
