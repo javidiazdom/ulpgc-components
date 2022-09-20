@@ -4,5 +4,6 @@
 !dist/
 dist/*
 !dist/fonts
-!./dist/ulpgc-header.min.js
-!./dist/ulpgc-footer.min.js
+!dist/img
+!dist/ulpgc-header.min.js
+!dist/ulpgc-footer.min.js
