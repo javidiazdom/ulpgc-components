@@ -1,5 +1,7 @@
 /*
 /*/
-!/dist/ulpgc-header.min.js
-!/dist/ulpgc-footer.min.js
+!dist/
+!dist/*
+!./dist/ulpgc-header.min.js
+!./dist/ulpgc-footer.min.js
 !.gitignore
