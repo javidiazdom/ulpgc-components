@@ -33,18 +33,5 @@ export default {
 </script>
 
 <style>
-    @charset "UTF-8";
     @import "https://cdn.ulpgc.es/ulpgcds/1.0/css/ulpgcds.css";
-
-    @font-face {
-        font-family: "ULPGC-icon";
-        src: url("../assets/fonts/ULPGC-icon.eot");
-        src: url("../assets/fonts/ULPGC-icon.eot") format("embedded-opentype"), 
-        url("../assets/fonts/ULPGC-icon.ttf") format("truetype"), 
-        url("../assets/fonts/ULPGC-icon.woff") format("woff"), 
-        url("../assets/fonts/ULPGC-icon.svg") format("svg");
-        font-weight: normal;
-        font-style: normal;
-        font-display: block; 
-    }
 </style>
