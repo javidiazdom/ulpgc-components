@@ -1,244 +1,90 @@
 <template>
-    <header class="ulpgcds-header">
-        <div class="ulpgcds-header__top">
-            <div class="ulpgcds-header__top__logo">
-                <a href="https://www.ulpgc.es" target="_blank"><span>ULPGC - Universidad de Las Palmas de Gran Canaria</span></a>
-                <a href="/"><span>Nombre unidad</span></a>
-            </div>
-
-            <div class="ulpgcds-header__top__links">
-                <ul>
-                    <li class="hidden-mobile" v-for="link in links" v-bind:key="link.url">
-                        <a :href="link.url" class="ulpgcds-btn ulpgcds-btn--text">
-                            <span :class="'ulpgcds-btn__icon ulpgcds-icon-' + link.iconClass"
-                                aria-hidden="true"></span>{{link.label}}
-                        </a>
-                    </li>
-
-                    <li>
-                        <button class="ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--secondary" id="btn-search">
-                            <span class="ulpgcds-btn__icon ulpgcds-icon-search" aria-hidden="true"></span>
-                            <span id="texto">Buscar</span>
-                        </button>
-                    </li>
-                    <li>
-                        <a href="/" class="ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--primary">
-                            <span class="ulpgcds-btn__icon ulpgcds-icon-user" aria-hidden="true"></span> MiULPGC
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-toggle hidden-desktop ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--secondary" href="#">
-                            <span class="ulpgcds-btn__icon ulpgcds-icon-menu" aria-hidden="true"></span> Menú
-                        </a>
-                    </li>
-                </ul>
-
+    <header id="header">
+        <div id="arriba"></div>
+        <div id="cabecera">
+            <div class="contenido_cabecera">		
+                <h1 id="logo"><a href="/" title="Inicio"><span>ULPGC - Universidad de Las Palmas de Gran Canaria</span></a></h1>    
+                <div id="bloque_dch_cabecera">
+                        <div id="fila_buscador">
+                             <div id="block-search-form" class="block block-search" style="display: none;">
+                                <form id="search-block-form" class="gss" action="https://www2.ulpgc.es/index.php" accept-charset="UTF-8">
+                                    <input type="hidden" name="pagina" value="busqueda">
+                                    <input type="hidden" name="ver" value="google">
+                                    <input type="hidden" name="cx" value="007197090300231128638%3Aetbigalvvwm">
+                                    <input type="hidden" name="ie" value="UTF-8">
+                                    <div>
+                                        <div class="container-inline">
+                                            <h2 class="element-invisible">Formulario de búsqueda</h2>
+                                              <div class="form-item form-type-textfield form-item-search-block-form">
+                                                <label class="element-invisible" for="edit-search-block-form--2">Buscar en la ULPGC </label>
+                                                <input title="Escriba lo que quiere buscar." placeholder="encuentra lo que necesitas / search in ULPGC site" type="text" id="edit-search-block-form--2" name="q">
+                                                <span class="ui-helper-hidden-accessible" role="status" aria-live="polite"></span>
+                                              </div>
+                                              <div id="edit-actions--2" class="form-actions form-wrapper">
+                                                  <input id="edit-submit--2" type="submit" name="op" value="Buscar" class="form-submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>			
+                            </div>  
+                            <!--  Mostramos bloque de Idiomas en cabecera-->
+                             <div></div>                                                                         
+                        </div>
+                    <div class="fila_enlaces" id="enlaces_ulpgc">
+                        <ul class="enlaces_cabecera">
+                            <!-- Links slot -->
+                            <slot name="links"></slot>
+                            <li><button class="ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--secondary" id="btn-search"><span class="ulpgcds-btn__icon ulpgcds-icon-search" aria-hidden="true"></span><span id="texto">Buscar</span></button></li>
+                                                                    
+                                <li><a href="https://www2.ulpgc.es/index.php?pagina=miulpgc&amp;ver=miulpgc&amp;login=mlpgc" class="ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--primary"><span class="ulpgcds-btn__icon ulpgcds-icon-user" aria-hidden="true"></span>MiULPGC</a></li>
+                                 
+                                <li><a class="nav-toggle hidden-desktop ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--secondary" href="#"><span class="ulpgcds-btn__icon ulpgcds-icon-menu" aria-hidden="true"></span>Menú</a></li>
+                        </ul>	
+                    </div> 
+                </div>
             </div>
         </div>
-        <nav class="ulpgcds-header__bottom" id="main-menu">
-            <ul class="ulpgcds-header__bottom__menu">
-                <li v-for="item in menu" v-bind:key="item.url">
-                    <a :href="item.url">{{item.title}}</a>
-                    <ul>
-                        <li v-for="subitem in item.items" v-bind:key="subitem.url">
-                            <a :href="subitem.url">{{subitem.label}}</a>
-                        </li>
+    
+        <nav id="main-menu">
+            <div id="panelmenu">
+                <div class="menu_principal">
+                      <div id="block-menu-block-1" class="block block-menu-block">
+                        <!-- Menú slot -->
+                        <slot name="main-menu"></slot>
+      
+    </div> <!-- /.block -->
+      
+                    <ul class="enlaces_cabecera_movil">
+                        <li><a href="https://correo.ulpgc.es/" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-envelope"></span>Correo</a></li>
+                        <li><a href="https://administracion.ulpgc.es" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"></span>Sede electrónica</a></li>
+                        <li><a href="https://www.ulpgc.es/transparencia" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"></span>Transparencia</a></li>
                     </ul>
-                </li>
-
-            </ul>
-        </nav>
+                    <div id="idiomas_mov"></div>
+                </div>
+            </div>
+        </nav><!-- end main-menu -->    
+        <div class="cabecera_impresion wrapper">
+            <img src="/sites/all/themes/ulpgc/images/logo_impresion.jpg" alt="ULPGC" width="422" height="103">
+                    <div class="info_fecha_hora">
+                21 de septiembre de 2022<br>
+                11:29        </div>
+            <div class="clearer"></div>
+        </div>
     </header>
-
 </template>
 
 <script>
 export default {
     name: 'HeaderInstitucional',
-    data() {
-        return {
-            menu: [
-                {
-                    title: 'la universidad',
-                    url: 'https://www.ulpgc.es/presentaci%C3%B3n',
-                    items: [{
-                        label: 'Conócenos',
-                        url: 'https://www.ulpgc.es/presentaci%C3%B3n'
-                    },
-                    {
-                        label: 'Gobierno',
-                        url: 'https://www.ulpgc.es/gobierno_inicial'
-                    },
-                    {
-                        label: 'Centros y Departamentos',
-                        url: 'https://www.ulpgc.es/centros_y_departamentos'
-                    },
-                    {
-                        label: 'Administración',
-                        url: 'https://www.ulpgc.es/administracion_inicial'
-                    },
-                    {
-                        label: 'Directorio de personal',
-                        url: 'http://www2.ulpgc.es/index.php?pagina=directorio&ver=inicio'
-                    },
-                    {
-                        label: 'Normativa y BOULPGC',
-                        url: 'https://www.ulpgc.es/normativa/inicio'
-                    },
-                    {
-                        label: 'Comunicación',
-                        url: 'https://www.ulpgc.es/actualidad'
-                    }
-                    ]
-                }, {
-                    title: 'estudios',
-                    url: 'https://www.ulpgc.es/estudios',
-                    items: [{
-                        label: 'Grados',
-                        url: 'https://www2.ulpgc.es/plan-estudio/inicio'
-                    },
-                    {
-                        label: 'Máster',
-                        url: 'https://www2.ulpgc.es/plan-estudio/master'
-                    },
-                    {
-                        label: 'Doctorado',
-                        url: 'https://www.ulpgc.es/doctorado'
-                    },
-                    {
-                        label: 'Idiomas',
-                        url: 'https://www.ulpgc.es/idiomas'
-                    },
-                    {
-                        label: 'Formación Permanente',
-                        url: 'https://www.ulpgc.es/otros_estudios_cursos'
-                    },
-                    {
-                        label: 'Becas y alojamiento',
-                        url: 'https://www.ulpgc.es/becas_y_alojamiento'
-                    },
-                    {
-                        label: 'Información académica',
-                        url: 'https://www.ulpgc.es/informacion_academica'
-                    }
-                    ]
-                }, {
-                    title: 'internacional',
-                    url: 'https://internacional.ulpgc.es/',
-                    items: [{
-                        label: 'Estrategia',
-                        url: 'https://internacional.ulpgc.es/estrategia/'
-                    },
-                    {
-                        label: 'Movilidad',
-                        url: 'https://internacional.ulpgc.es/presentacion-movilidad/'
-                    },
-                    {
-                        label: 'Idiomas',
-                        url: 'https://internacional.ulpgc.es/presentacion-idiomas/'
-                    },
-                    {
-                        label: 'Cooperación',
-                        url: 'https://internacional.ulpgc.es/cooperacion/'
-                    },
-                    {
-                        label: 'Educación para el desarrollo',
-                        url: 'https://internacional.ulpgc.es/educa-desarrollo/'
-                    },
-                    {
-                        label: 'Relaciones con la UE',
-                        url: 'https://dirue.ulpgc.es/'
-                    },
-                    ]
-                }, {
-                    title: 'investigación',
-                    url: 'https://www.ulpgc.es/investigacion',
-                    items: [{
-                        label: 'Subvenciones directas',
-                        url: 'https://www.ulpgc.es/vinvestigacion/subvencionesdirectas'
-                    },
-                    {
-                        label: 'Grupos e Institutos',
-                        url: 'https://www.ulpgc.es/estructuras_investigacion'
-                    },
-                    {
-                        label: 'Convocatorias I+D+i',
-                        url: 'https://www.ulpgc.es/programas_investigacion'
-                    },
-                    {
-                        label: 'Portal ULPGC Research',
-                        url: 'http://www.research.ulpgc.es/'
-                    },
-                    {
-                        label: 'Portal ULPGC accedaCRIS',
-                        url: 'https://accedacris.ulpgc.es/'
-                    },
-                    {
-                        label: 'HR Excellence in Research',
-                        url: 'https://www.ulpgc.es/vinvestigacion/HRS4R'
-                    }
-                    ]
-                }, {
-                    title: 'servicios',
-                    url: 'https://www.ulpgc.es/servicios',
-                    items:
-                        [{
-                            label: 'Biblioteca',
-                            url: 'http://biblioteca.ulpgc.es/'
-                        },
-                        {
-                            label: 'Publicaciones',
-                            url: 'http://spdc.ulpgc.es/'
-                        },
-                        {
-                            label: 'Cultura Universitaria',
-                            url: 'https://www.ulpgc.es/vcultura/informacion_interes'
-                        },
-                        {
-                            label: 'ULPGC en línea',
-                            url: 'https://www.ulpgc.es/administrator/e-learning'
-                        },
-                        {
-                            label: 'Servicio de Informática',
-                            url: 'http://www.si.ulpgc.es/'
-                        },
-                        {
-                            label: 'Contratación pública',
-                            url: 'https://www.ulpgc.es/spatrimonioycontratacion/contratacion-publica'
-                        },
-                        {
-                            label: 'Otros servicios',
-                            url: 'https://www.ulpgc.es/otros_servicios/inicio'
-                        }]
-                }
-            ],
-            links: [
-                {
-                    label: 'Correo',
-                    iconClass: 'envelope',
-                    url: 'https://correo.ulpgc.es/'
-                },
-                {
-                    label: 'Sede electrónica',
-                    iconClass: 'campus',
-                    url: 'https://administracion.ulpgc.es/'
-                },
-                {
-                    label: 'Transparencia',
-                    iconClass: 'campus',
-                    url: 'https://www.ulpgc.es/transparencia'
-                }
-            ]
-        };
-    },
 };
 </script>
 
 <style>
-.ulpgcds-header__top__logo {
-    background: transparent url("https://www.ulpgc.es/sites/all/themes/ulpgc/images/ULPGC-logo-ucrania-escritorio.svg") no-repeat 0 center;
-    height: 76px;
-    background-size: 306px;
-    width: 306px
-}
+    @import url("https://www.ulpgc.es/modules/search/search.css?rg1gmx");
+    @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/ulpgcds/js/slick/slick.css?rg1gmx");
+    @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/ulpgcdsmerge.css?rg1gmx");
+    @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/style.css?rg1gmx");
+    @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/custom.css?rg1gmx");
+    @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/print.css?rg1gmx") print;
+
 </style>

@@ -1,6 +1,9 @@
 <template>
-    <Miulpgc v-if="isMiulpgc"/>
-    <Institucional v-else/>
+    <component :is="component">
+        <template v-for="(index,name) in $slots" v-slot:[name]>
+            <slot :name="name"></slot>
+        </template>
+    </component>
 </template>
 
 <script>
@@ -12,19 +15,18 @@ export default {
         type: {
             type: String,
             default: "institucional"
-        },
-        user: {
-            type: String
         }
     },
     components: {
     Institucional,
-    Miulpgc
-},
+    Miulpgc,
+    },
+    data() {
+        return {
+            component: this.type === 'miulpgc' ? Miulpgc : Institucional
+        }
+    },
     computed: {
-        isMiulpgc() {
-            return this.type === 'miulpgc';
-        },
         isUserLogged() {
             return !!this.user;
         }
@@ -33,5 +35,4 @@ export default {
 </script>
 
 <style>
-    @import "https://cdn.ulpgc.es/ulpgcds/1.0/css/ulpgcds.css";
 </style>
