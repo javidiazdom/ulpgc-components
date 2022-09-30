@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" title="ULPGC - Universidad de Las Palmas de Gran Canaria RSS"
+        href="https://www.ulpgc.es/rss.xml" />
+    <link rel="shortcut icon" href="https://www.ulpgc.es/sites/default/files/ulpgc_favicon_1.png" />
+    <link rel="stylesheet" href="<%= BASE_URL %>style.css">
+    <link rel="stylesheet" href="https://www2.ulpgc.es/css/miulpgc-comun.css">
+	<link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="Noticias ULPGC" href="/rss-noticias.xml" />
+
+    <!-- Configuración favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0066a1">
+    <meta name="apple-mobile-web-app-title" content="ULPGC">
+    <meta name="application-name" content="ULPGC">
+    <meta name="msapplication-TileColor" content="#ffa100">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffa100">
+    <!-- Fin Configuración favicons-->
+
+    <meta name="viewport" content="width=device-width,user-scalable=1,initial-scale=1.0" />
+    <title>ULPGC - Universidad de Las Palmas de Gran Canaria</title>
+    <style>
+        @import url("https://www.ulpgc.es/modules/system/system.base.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/system/system.menus.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/system/system.messages.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/system/system.theme.css?rit43t");
+    </style>
+    <style>
+        @import url("https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.menu.min.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.autocomplete.min.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?rit43t");
+    </style>
+    <style>
+        @import url("https://www.ulpgc.es/modules/aggregator/aggregator.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/calendar/css/calendar_multiday.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/date/date_repeat_field/date_repeat_field.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/field/theme/field.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/node/node.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/search/search.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/siteimprove/css/siteimprove.css?rit43t");
+        @import url("https://www.ulpgc.es/modules/user/user.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/views/css/views.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/ckeditor/css/ckeditor.css?rit43t");
+    </style>
+    <style>
+        @import url("https://www.ulpgc.es/sites/all/modules/ctools/css/ctools.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/panels/css/panels.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/modules/eu_cookie_compliance/css/eu_cookie_compliance.bare.css?rit43t");
+    </style>
+    <style>
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/ulpgcds/js/slick/slick.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/ulpgcdsmerge.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/style.css?rit43t");
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/custom.css?rit43t");
+    </style>
+    <style media="print">
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/css/print.css?rit43t");
+    </style>
+    <style>
+        @import url("https://www.ulpgc.es/sites/all/themes/ulpgc/estilos_internos.css");
+    </style>
+	<script src="build/bundle.js"></script>
+    <script src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js?v=1.7.2"></script>
+    <script src="https://www.ulpgc.es/misc/jquery-extend-3.4.0.js?v=1.7.2"></script>
+    <script src="https://www.ulpgc.es/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.7.2"></script>
+    <script src="https://www.ulpgc.es/misc/jquery.once.js?v=1.2"></script>
+    <script src="https://www.ulpgc.es/misc/drupal.js?rit43t"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.position.min.js?v=1.10.2"></script>
+    <script src="https://www.ulpgc.es/misc/ui/jquery.ui.position-1.13.0-backport.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.menu.min.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.autocomplete.min.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.accordion.min.js?v=1.10.2"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/eu_cookie_compliance/js/jquery.cookie-1.4.1.min.js?v=1.4.1"></script>
+    <script src="https://www.ulpgc.es/sites/all/modules/jquery_ui_filter/jquery_ui_filter.js?rit43t"></script>
+    <script src="https://www.ulpgc.es/sites/all/modules/gss/scripts/autocomplete.js?rit43t"></script>
+    <script
+        src="https://www.ulpgc.es/sites/default/files/languages/es_M0XnVLlpVUrHOEKcVMAMhd1DojXVCOaK-d-Z5-uaRYc.js?rit43t"></script>
+    <script
+        src="https://www.ulpgc.es/sites/all/modules/jquery_ui_filter/accordion/jquery_ui_filter_accordion.js?rit43t"></script>
+    <script src="https://www.ulpgc.es/sites/all/modules/google_analytics/googleanalytics.js?rit43t"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["GoogleAnalyticsObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"); ga("create", "UA-38150952-1", { "cookieDomain": "auto" }); ga("set", "anonymizeIp", true); var gaCode = 'UA-38150952-1';
+        window['ga-disable-' + gaCode] = true; ga("send", "pageview"); (function ($) {
+            $(document).ready(function () {
+                if (Drupal && Drupal.eu_cookie_compliance && Drupal.eu_cookie_compliance.hasAgreed("rendimiento")) {
+                    trackGUIEvent = function (selector, actionName) {
+                        $(selector).on("click", function () {
+                            var eventLabel = $(this).attr("href");
+                            if (eventLabel == null) eventLabel = $(this).text();
+                            ga("send", {
+                                "hitType": "event",
+                                "eventCategory": "GUI Event",
+                                "eventAction": actionName,
+                                "eventLabel": eventLabel,
+                                "transport": "beacon"
+                            });
+                        });
+                    };
+
+                    trackGUIEvent("#cabecera a", "header");
+                    // no se puede capturar porque hay otro on("click") sobre él
+                    // trackGUIEvent("#btn-search","search");
+                    trackGUIEvent("#main-menu a", "main menu");
+                    trackGUIEvent(".migas_pan a", "breadcrumb");
+                    trackGUIEvent("#columna-izq a", "secondary menu");
+                    trackGUIEvent(".view-carrusel-medio-portada a", "featured product");
+                    trackGUIEvent("#pie_pagina a", "footer");
+                }
+            })
+        })(jQuery);</script>
+    <!-- <script src="/handlers.js"></script> -->
+    <script defer="defer" src="https://www.ulpgc.es/sites/all/themes/ulpgc/ulpgcds/js/ulpgcds.js?rit43t"></script>
+    <script defer="defer" src="https://www.ulpgc.es/sites/all/themes/ulpgc/ulpgcds/js/slick/slick.js?rit43t"></script>
+    <script src="https://www.ulpgc.es/sites/all/themes/ulpgc/js/ulpgc.js?rit43t"></script>
+    <script src="https://www.ulpgc.es/sites/all/themes/ulpgc/js/cookieControl.js?rit43t"></script>
+    <script src="https://www.ulpgc.es/sites/all/themes/ulpgc/js/jquery.pageslide.min.js?rit43t"></script>
+    <script>jQuery.extend(Drupal.settings, { "basePath": "\/", "pathPrefix": "", "setHasJsCookie": 0, "ajaxPageState": { "theme": "ulpgc", "theme_token": "qVfVTW05ZPDureU6Lpm9-RLmLiXFNx3NJ_9Y3LYbcII", "js": { "0": 1, "sites\/all\/modules\/eu_cookie_compliance\/js\/eu_cookie_compliance.js": 1, "sites\/all\/modules\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js": 1, "misc\/jquery-extend-3.4.0.js": 1, "misc\/jquery-html-prefilter-3.5.0-backport.js": 1, "misc\/jquery.once.js": 1, "misc\/drupal.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js": 1, "misc\/ui\/jquery.ui.position-1.13.0-backport.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.menu.min.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.autocomplete.min.js": 1, "sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js": 1, "sites\/all\/modules\/eu_cookie_compliance\/js\/jquery.cookie-1.4.1.min.js": 1, "sites\/all\/modules\/jquery_ui_filter\/jquery_ui_filter.js": 1, "sites\/all\/modules\/gss\/scripts\/autocomplete.js": 1, "public:\/\/languages\/es_M0XnVLlpVUrHOEKcVMAMhd1DojXVCOaK-d-Z5-uaRYc.js": 1, "sites\/all\/modules\/jquery_ui_filter\/accordion\/jquery_ui_filter_accordion.js": 1, "sites\/all\/modules\/google_analytics\/googleanalytics.js": 1, "1": 1, "\/sites\/all\/themes\/ulpgc\/ulpgcds\/js\/ulpgcds.js": 1, "\/sites\/all\/themes\/ulpgc\/ulpgcds\/js\/slick\/slick.js": 1, "sites\/all\/themes\/ulpgc\/js\/ulpgc.js": 1, "sites\/all\/themes\/ulpgc\/js\/cookieControl.js": 1, "sites\/all\/themes\/ulpgc\/js\/jquery.pageslide.min.js": 1 }, "css": { "modules\/system\/system.base.css": 1, "modules\/system\/system.menus.css": 1, "modules\/system\/system.messages.css": 1, "modules\/system\/system.theme.css": 1, "misc\/ui\/jquery.ui.core.css": 1, "misc\/ui\/jquery.ui.theme.css": 1, "misc\/ui\/jquery.ui.menu.css": 1, "misc\/ui\/jquery.ui.autocomplete.css": 1, "misc\/ui\/jquery.ui.accordion.css": 1, "modules\/aggregator\/aggregator.css": 1, "sites\/all\/modules\/calendar\/css\/calendar_multiday.css": 1, "sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css": 1, "modules\/field\/theme\/field.css": 1, "modules\/node\/node.css": 1, "modules\/search\/search.css": 1, "sites\/all\/modules\/siteimprove\/css\/siteimprove.css": 1, "modules\/user\/user.css": 1, "sites\/all\/modules\/views\/css\/views.css": 1, "sites\/all\/modules\/ckeditor\/css\/ckeditor.css": 1, "sites\/all\/modules\/ctools\/css\/ctools.css": 1, "sites\/all\/modules\/panels\/css\/panels.css": 1, "sites\/all\/modules\/eu_cookie_compliance\/css\/eu_cookie_compliance.bare.css": 1, "sites\/all\/themes\/ulpgc\/ulpgcds\/js\/slick\/slick.css": 1, "sites\/all\/themes\/ulpgc\/css\/ulpgcdsmerge.css": 1, "sites\/all\/themes\/ulpgc\/css\/style.css": 1, "sites\/all\/themes\/ulpgc\/css\/custom.css": 1, "sites\/all\/themes\/ulpgc\/css\/print.css": 1 } }, "gss": { "key": "015287457728437169121:0b2hmkleefw" }, "jQueryUiFilter": { "disabled": 0, "accordionHeaderTag": "h3", "accordionOptions": { "active": 0, "animated": "slide", "autoHeight": "false", "clearStyle": "true", "collapsible": "false", "event": "click", "scrollTo": 0, "history": "false" } }, "better_exposed_filters": { "views": { "slider_portada_2": { "displays": { "block": { "filters": [] } } }, "men_slider_portada": { "displays": { "block": { "filters": [] } } }, "carrusel_portada": { "displays": { "block_1": { "filters": [] } } }, "carrusel_medio_portada": { "displays": { "block_1": { "filters": [] } } }, "noticias_destacadas_ulpgcds": { "displays": { "block": { "filters": [] } } } } }, "eu_cookie_compliance": { "cookie_policy_version": "1.0.0", "popup_enabled": 1, "popup_agreed_enabled": 0, "popup_hide_agreed": 0, "popup_clicking_confirmation": false, "popup_scrolling_confirmation": false, "popup_html_info": "\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--categories wrapper\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EUtilizamos cookies para mejorar tu experiencia de uso de esta web y con fines anal\u00edticos. Puedes leer m\u00e1s en nuestra \u003Ca href=\u0022\/sobre-esta-web\/cookies\u0022 target=\u0022_blank\u0022\u003Edeclaraci\u00f3n sobre cookies\u003C\/a\u003E\u003C\/p\u003E              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EConfiguraci\u00f3n de cookies\u003C\/button\u003E\n                  \u003Cdiv id=\u0022eu-cookie-compliance-categories\u0022 class=\u0022eu-cookie-compliance-categories hidden\u0022\u003E\n                  \u003Cdiv class=\u0022eu-cookie-compliance-category\u0022\u003E\n            \u003Cdiv\u003E\n              \u003Cinput type=\u0022checkbox\u0022 name=\u0022cookie-categories\u0022 id=\u0022cookie-category-esenciales\u0022\n                     value=\u0022esenciales\u0022\n                     checked                     disabled \u003E\n              \u003Clabel for=\u0022cookie-category-esenciales\u0022\u003EEsenciales\u003C\/label\u003E\n            \u003C\/div\u003E\n                      \u003Cdiv class=\u0022eu-cookie-compliance-category-description\u0022\u003E\u003C\/div\u003E\n                  \u003C\/div\u003E\n                  \u003Cdiv class=\u0022eu-cookie-compliance-category\u0022\u003E\n            \u003Cdiv\u003E\n              \u003Cinput type=\u0022checkbox\u0022 name=\u0022cookie-categories\u0022 id=\u0022cookie-category-rendimiento\u0022\n                     value=\u0022rendimiento\u0022\n                                           \u003E\n              \u003Clabel for=\u0022cookie-category-rendimiento\u0022\u003ERendimiento y anal\u00edtica\u003C\/label\u003E\n            \u003C\/div\u003E\n                      \u003Cdiv class=\u0022eu-cookie-compliance-category-description\u0022\u003E\u003C\/div\u003E\n                  \u003C\/div\u003E\n                          \u003Cdiv class=\u0022eu-cookie-compliance-categories-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022\n                    class=\u0022eu-cookie-compliance-save-preferences-button\u0022\u003EGuardar configuraci\u00f3n\u003C\/button\u003E\n          \u003C\/div\u003E\n              \u003C\/div\u003E\n        \u003C\/div\u003E\n    \n\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-has-categories\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 id=\u0022nobutton\u0022 class=\u0022nobutton\u0022\u003EConfiguraci\u00f3n\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAceptar cookies\u003C\/button\u003E      \n              \u003C!-- \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button eu-cookie-compliance-hidden\u0022 \u003ERechazar cookies\u003C\/button\u003E --\u003E\n        \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ERechazar cookies\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E", "use_mobile_message": false, "mobile_popup_html_info": "  \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--categories wrapper\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy tapping the Accept button, you agree to us doing so.\u003C\/p\u003E              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EConfiguraci\u00f3n de cookies\u003C\/button\u003E\n                  \u003Cdiv id=\u0022eu-cookie-compliance-categories\u0022 class=\u0022eu-cookie-compliance-categories hidden\u0022\u003E\n                  \u003Cdiv class=\u0022eu-cookie-compliance-category\u0022\u003E\n            \u003Cdiv\u003E\n              \u003Cinput type=\u0022checkbox\u0022 name=\u0022cookie-categories\u0022 id=\u0022cookie-category-esenciales\u0022\n                     value=\u0022esenciales\u0022\n                     checked                     disabled \u003E\n              \u003Clabel for=\u0022cookie-category-esenciales\u0022\u003EEsenciales\u003C\/label\u003E\n            \u003C\/div\u003E\n                      \u003Cdiv class=\u0022eu-cookie-compliance-category-description\u0022\u003E\u003C\/div\u003E\n                  \u003C\/div\u003E\n                  \u003Cdiv class=\u0022eu-cookie-compliance-category\u0022\u003E\n            \u003Cdiv\u003E\n              \u003Cinput type=\u0022checkbox\u0022 name=\u0022cookie-categories\u0022 id=\u0022cookie-category-rendimiento\u0022\n                     value=\u0022rendimiento\u0022\n                                           \u003E\n              \u003Clabel for=\u0022cookie-category-rendimiento\u0022\u003ERendimiento y anal\u00edtica\u003C\/label\u003E\n            \u003C\/div\u003E\n                      \u003Cdiv class=\u0022eu-cookie-compliance-category-description\u0022\u003E\u003C\/div\u003E\n                  \u003C\/div\u003E\n                          \u003Cdiv class=\u0022eu-cookie-compliance-categories-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022\n                    class=\u0022eu-cookie-compliance-save-preferences-button\u0022\u003EGuardar configuraci\u00f3n\u003C\/button\u003E\n          \u003C\/div\u003E\n              \u003C\/div\u003E\n        \u003C\/div\u003E\n    \n\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-has-categories\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 id=\u0022nobutton\u0022 class=\u0022nobutton\u0022\u003EConfiguraci\u00f3n\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAceptar cookies\u003C\/button\u003E      \n              \u003C!-- \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button eu-cookie-compliance-hidden\u0022 \u003ERechazar cookies\u003C\/button\u003E --\u003E\n        \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ERechazar cookies\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n", "mobile_breakpoint": "768", "popup_html_agreed": "\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E", "popup_use_bare_css": 1, "popup_height": "auto", "popup_width": 0, "popup_delay": 1000, "popup_link": "\/sobre-esta-web\/cookies", "popup_link_new_window": 1, "popup_position": null, "fixed_top_position": 1, "popup_language": "es", "store_consent": false, "better_support_for_screen_readers": 0, "reload_page": 0, "domain": "", "domain_all_sites": 0, "popup_eu_only_js": 0, "cookie_lifetime": "100", "cookie_session": false, "disagree_do_not_show_popup": 0, "method": "categories", "allowed_cookies": "", "withdraw_markup": "\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003ERechazar cookies\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n", "withdraw_enabled": 1, "withdraw_button_on_info_popup": 1, "cookie_categories": ["esenciales", "rendimiento"], "cookie_categories_details": { "esenciales": { "weight": "0", "machine_name": "esenciales", "label": "Esenciales", "description": "", "checkbox_default_state": "required" }, "rendimiento": { "weight": "0", "machine_name": "rendimiento", "label": "Rendimiento y anal\u00edtica", "description": "", "checkbox_default_state": "unchecked" } }, "enable_save_preferences_button": 1, "cookie_name": "", "containing_element": "body", "automatic_cookies_removal": 1 }, "googleanalytics": { "trackOutbound": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip", "trackColorbox": 1 } });</script>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" type="text/css" src="/sites/all/themes/ulpgc/ielt9.css" />
+<![endif]-->
+    <!--[if gte IE 9]>
+  <style type="text/css">    .gradient {       filter: none;    }  </style>
+<![endif]-->
+    <!--[if lte IE 8]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/ulpgc/ielte8.css" />
+<![endif]-->
+
+    <!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/ulpgc/ielt8.css" />
+<![endif]-->
+    <meta name="facebook-domain-verification" content="4tye9yrptaogoqe8o107vfh31tvtm1" />
+</head>
+
+<body class="html front logged-in no-sidebars page-node i18n-es">
+    <div id="content">
+
+
+
+        <div class="skip-links">
+
+            <a class="element-invisible element-focusable" href="#contenido_portada">Ir al contenido principal</a>
+
+            <a class="element-invisible element-focusable" href="#main-menu">Ir al menú principal</a>
+        </div>
+
+
+        <!-- Cabecera -->
+            <ulpgc-header class="ulpgcds-header">
+                <a slot="link" href="https://www.ulpgc.es/transparencia"
+                            class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"
+                                aria-hidden="true"></span>Transparencia</a>
+                </span>
+				<a slot="link" href="https://correo.ulpgc.es/"
+					class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-envelope"
+						aria-hidden="true"></span>Correo</a>
+				<a slot="link" href="https://administracion.ulpgc.es"
+					class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"
+						aria-hidden="true"></span>Sede electrónica</a>
+				<nav id="main-menu" slot="main-menu">
+					<div id="panelmenu">
+						<div class="menu_principal">
+								<div id="block-menu-block-1" class="block block-menu-block">
+			
+						<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+				<ul class="menu"><li class="first expanded menu-mlid-557"><a href="/presentaci%C3%B3n" title="Conoce la Universidad de Las Palmas de Gran Canaria" id="wi-mainmenu--launiversidad">la universidad</a><ul class="menu"><li class="first leaf menu-mlid-562"><a href="/presentaci%C3%B3n" title="Información general sobre la ULPGC" id="wi-mainmenu--launiversidad--conocenos">Conócenos</a><span></span></li>
+			<li class="leaf menu-mlid-592"><a href="/gobierno_inicial" id="wi-mainmenu--launiversidad--gobierno">Gobierno</a><span></span></li>
+			<li class="leaf menu-mlid-668"><a href="/centros_y_departamentos" title="Escuelas, facultades y departamentos" id="wi-mainmenu--launiversidad--centros-y-departamentos">Centros y Departamentos</a><span></span></li>
+			<li class="leaf menu-mlid-672"><a href="/administracion_inicial" title="Unidades administrativas de la ULPGC" id="wi-mainmenu--launiversidad--administracion">Administración</a><span></span></li>
+			<li class="leaf menu-mlid-675"><a href="http://www2.ulpgc.es/index.php?pagina=directorio&amp;ver=inicio" title="Búsqueda de personal de la ULPGC" id="wi-mainmenu--launiversidad--directorio-de-personal">Directorio de personal</a><span></span></li>
+			<li class="leaf menu-mlid-673"><a href="/normativa/inicio" title="BOULPGC (boletín oficial de la ULPGC) y reglamentos internos" id="wi-mainmenu--launiversidad--normativa-y-boulpgc">Normativa y BOULPGC</a><span></span></li>
+			<li class="last leaf menu-mlid-676"><a href="/actualidad" title="Noticias, agenda y comunicación" id="wi-mainmenu--launiversidad--actualidad">Comunicación</a><span></span></li>
+			</ul><span></span></li>
+			<li class="expanded menu-mlid-558"><a href="/estudios" title="Toda nuestra oferta de estudios" id="wi-mainmenu--estudios">estudios</a><ul class="menu"><li class="first leaf menu-mlid-594"><a href="https://www2.ulpgc.es/plan-estudio/inicio" id="wi-mainmenu--estudios--grados">Grados</a><span></span></li>
+			<li class="leaf menu-mlid-595"><a href="https://www2.ulpgc.es/plan-estudio/master" id="wi-mainmenu--estudios--masteres">Másteres</a><span></span></li>
+			<li class="leaf menu-mlid-1237"><a href="/doctorado" id="wi-mainmenu--estudios--doctorados">Doctorados</a><span></span></li>
+			<li class="leaf menu-mlid-679"><a href="/idiomas" title="Aula de idiomas" id="wi-mainmenu--estudios--idiomas">Idiomas</a><span></span></li>
+			<li class="leaf menu-mlid-678"><a href="/otros_estudios_cursos" title="Formación Permanente" id="wi-mainmenu--estudios--titulos-propios-otros-estudios-y-cursos">Formación Permanente</a><span></span></li>
+			<li class="leaf menu-mlid-681"><a href="/becas_y_alojamiento" id="wi-mainmenu--estudios--becas-y-alojamientos">Becas y alojamiento</a><span></span></li>
+			<li class="last leaf menu-mlid-682"><a href="/informacion_academica" id="wi-mainmenu--estudios--informacion-academica">Información académica</a><span></span></li>
+			</ul><span></span></li>
+			<li class="expanded menu-mlid-3486"><a href="https://internacional.ulpgc.es/" id="wi-mainmenu--internacional">internacional</a><ul class="menu"><li class="first leaf menu-mlid-3487"><a href="https://internacional.ulpgc.es/estrategia/" id="wi-mainmenu--internacional--estrategia">Estrategia</a><span></span></li>
+			<li class="leaf menu-mlid-3488"><a href="https://internacional.ulpgc.es/presentacion-movilidad/" id="wi-mainmenu--internacional--movilidad">Movilidad</a><span></span></li>
+			<li class="leaf menu-mlid-3489"><a href="https://internacional.ulpgc.es/presentacion-idiomas/" id="wi-mainmenu--internacional--idiomas">Idiomas</a><span></span></li>
+			<li class="leaf menu-mlid-3490"><a href="https://internacional.ulpgc.es/cooperacion/" id="#wi-mainmenu--internacional--cooperacion">Cooperación</a><span></span></li>
+			<li class="leaf menu-mlid-3491"><a href="https://internacional.ulpgc.es/educa-desarrollo/" id="wi-mainmenu--internacional--educacion-para-el-desarrollo">Educación para el Desarrollo</a><span></span></li>
+			<li class="last leaf menu-mlid-3535"><a href="https://dirue.ulpgc.es/" id="wi-mainmenu--internacional--relaciones-con-la-ue">Relaciones con la UE</a><span></span></li>
+			</ul><span></span></li>
+			<li class="expanded menu-mlid-560"><a href="/investigacion" id="wi-mainmenu--investigacion">investigación</a><ul class="menu"><li class="first leaf menu-mlid-4469"><a href="/vinvestigacion/subvencionesdirectas">Subvenciones directas</a><span></span></li>
+			<li class="leaf menu-mlid-2906"><a href="/estructuras_investigacion" id="wi-mainmenu--investigacion--estructuras-de-investigacion">Grupos e Institutos</a><span></span></li>
+			<li class="leaf menu-mlid-4425"><a href="/programas_investigacion">Convocatorias I+D+i</a><span></span></li>
+			<li class="leaf menu-mlid-2948"><a href="http://www.research.ulpgc.es/" id="wi-mainmenu--investigacion--portal-ulpgc-research">Portal ULPGC Research</a><span></span></li>
+			<li class="leaf menu-mlid-4094"><a href="https://accedacris.ulpgc.es/">Portal ULPGC accedaCRIS</a><span></span></li>
+			<li class="last leaf menu-mlid-4583"><a href="https://www.ulpgc.es/vinvestigacion/HRS4R">HR Excellence in Research</a><span></span></li>
+			</ul><span></span></li>
+			<li class="last expanded menu-mlid-561"><a href="/servicios" title="Servicios no académicos de la ULPGC" id="wi-mainmenu--servicios">servicios</a><ul class="menu"><li class="first leaf menu-mlid-598"><a href="http://biblioteca.ulpgc.es" id="wi-mainmenu--servicios--biblioteca">Biblioteca</a><span></span></li>
+			<li class="leaf menu-mlid-599"><a href="http://spdc.ulpgc.es" title="Servicio de Publicaciones y Difusión Científica" id="#wi-mainmenu--servicios--publicaciones">Publicaciones</a><span></span></li>
+			<li class="leaf menu-mlid-696"><a href="/vcultura/informacion_interes" id="wi-mainmenu--servicios--cultura">Cultura Universitaria</a><span></span></li>
+			<li class="leaf menu-mlid-693"><a href="https://www.ulpgc.es/administrator/e-learning" id="wi-mainmenu--servicios--e-learning">ULPGC en línea</a><span></span></li>
+			<li class="leaf menu-mlid-694"><a href="http://www.si.ulpgc.es/" id="wi-mainmenu--servicios--servicio-de-informatica">Servicio de Informática</a><span></span></li>
+			<li class="leaf menu-mlid-695"><a href="/spatrimonioycontratacion/contratacion-publica" id="wi-mainmenu--servicios--contratacion-publica">Contratación pública</a><span></span></li>
+			<li class="last leaf menu-mlid-698"><a href="/otros_servicios/inicio" title="Directorio completo de servicios no académicos" id="wi-mainmenu--servicios--otros-servicios">Otros servicios</a><span></span></li>
+			</ul><span></span></li>
+			</ul></div>
+				
+			</div> <!-- /.block -->
+				
+							<ul class="enlaces_cabecera_movil">
+								<li><a href="https://correo.ulpgc.es/" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-envelope"></span>Correo</a></li>
+								<li><a href="https://administracion.ulpgc.es" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"></span>Sede electrónica</a></li>
+								<li><a href="https://www.ulpgc.es/transparencia" class="ulpgcds-btn ulpgcds-btn--text"><span class="ulpgcds-btn__icon ulpgcds-icon-campus"></span>Transparencia</a></li>
+							</ul>
+							<div id="idiomas_mov"></div>
+						</div>
+					</div>
+				</nav>
+				<button slot ="search-button" class="ulpgcds-btn ulpgcds-btn--small ulpgcds-btn--secondary"
+				id="btn-search"><span class="ulpgcds-btn__icon ulpgcds-icon-search"
+					aria-hidden="true"></span><span id="texto">Buscar</span></button>
+				<li slot="userInfo" class="info_usuario">
+						<div class="ulpgcds-avatar ulpgcds-avatar--small ">
+							<div class="ulpgcds-avatar__letter ulpgcds-avatar__letter--blue data-hj-suppress">J</div>
+						</div>
+						<div class="ulpgcds-avatar__fullname data-hj-suppress" title="Javier Díaz Domínguez">Javier</div>
+						<ul class="submenu" style="display: none;">
+							<li><a class="ulpgcds-btn ulpgcds-btn--text"
+									href="https://www2.ulpgc.es/index.php?pagina=miulpgc&amp;ver=miulpgc&amp;login=mlpgc"><span
+										class="ulpgcds-btn__icon ulpgcds-icon-miulpgc"></span>MiULPGC</a></li>
+							<li><a class="ulpgcds-btn ulpgcds-btn--text"
+									href="https://www2.ulpgc.es/index.php?pagina=miulpgc&amp;ver=misdatospersonales&amp;login=mlpgc"><span
+										class="ulpgcds-btn__icon ulpgcds-icon-user"></span>Mis datos personales</a></li>
+							<li><a class="ulpgcds-btn ulpgcds-btn--text" href="/caslogout?destination=/"><span
+										class="ulpgcds-btn__icon ulpgcds-icon-power" aria-hidden="true"></span>Cerrar
+									sesión</a></li>
+						</ul>
+                    </li>
+            </ulpgc-header>
+        <div id="contenido_portada">
+
+            <div id="block-views-carrusel-portada-block-1" class="block block-views">
+
+                <div
+                    class="view view-carrusel-portada view-id-carrusel_portada view-display-id-block_1 view-dom-id-7dca99b3df52fe9b32d5a70d98458f32">
+
+
+
+                    <div class="view-content">
+                        <ul class="ulpgcds-carrusel ulpgcds-carrusel--square">
+                            <li class="">
+                                <div class="ulpgcds-carrusel--square__img">
+                                    <img typeof="foaf:Image"
+                                        src="https://www.ulpgc.es/sites/default/files/carrusel/pw-ulpgc.jpg" width="480"
+                                        height="480" alt="Patents Week by ULPGC 2022" />
+
+                                </div>
+                                <div class="ulpgcds-carrusel--square__box">
+                                    <div class="ulpgcds-carrusel__center">
+                                        <h2>Patents Week by ULPGC 2022</h2>
+                                        <p>27 -30 septiembre.<br />
+                                            Divulgación y formación sobre Propiedad Industrial en el Museo Elder de la
+                                            Ciencia y la Tecnología</p>
+                                        <a href="/noticia/2022/09/23/ulpgc-y-cabildo-gran-canaria-celebran-nueva-edicion-patents-week"
+                                            class="ulpgcds-btn ulpgcds-btn--primary">Leer más</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="ulpgcds-carrusel--square__img">
+                                    <img typeof="foaf:Image"
+                                        src="https://www.ulpgc.es/sites/default/files/carrusel/ci_bandas_cristinaruano02.png"
+                                        width="480" height="480" alt="Cristina Ruano" />
+
+                                </div>
+                                <div class="ulpgcds-carrusel--square__box">
+                                    <div class="ulpgcds-carrusel__center">
+                                        <h2>#SerULPGC - COOPERACIÓN INTERNACIONAL</h2>
+                                        <p><strong>Cristina Ruano, Nieves González, Lidia Robaina y Ana Wagner</strong>,
+                                            investigadoras principales del proyecto de Cooperación Internacional
+                                            <em>MACBIOBLUE_ITC</em></p>
+                                        <a href="https://youtu.be/S7t2dxDdCOg"
+                                            class="ulpgcds-btn ulpgcds-btn--primary">Ver video</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="ulpgcds-carrusel--square__img">
+                                    <img typeof="foaf:Image"
+                                        src="https://www.ulpgc.es/sites/default/files/carrusel/egresados-slider.jpg"
+                                        width="480" height="480" alt="La Universidad del talento" />
+
+                                </div>
+                                <div class="ulpgcds-carrusel--square__box">
+                                    <div class="ulpgcds-carrusel__center">
+                                        <h2>#talentoULPGC</h2>
+                                        <p>Conoce la experiencia de <strong>Luis Alvarado</strong>, asesor climático en
+                                            el Foro Económico Mundial; <strong>Elisenda Bou-Balust</strong>, directora
+                                            del Apple Media Knowledge; <strong>Marta Cabrera</strong>, jurista de la
+                                            Corte Interamericana de los Derechos Humanos; y <strong>Javier
+                                                Santaolalla</strong>, divulgador científico</p>
+                                        <a href="https://sie.ulpgc.es/talentoulpgc"
+                                            class="ulpgcds-btn ulpgcds-btn--primary">Ver vídeos</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="ulpgcds-carrusel--square__img">
+                                    <img typeof="foaf:Image"
+                                        src="https://www.ulpgc.es/sites/default/files/carrusel/s-9-octavioperez-3.png"
+                                        width="480" height="480" alt="Octavio Luis Pérez Luzardo" />
+
+                                </div>
+                                <div class="ulpgcds-carrusel--square__box">
+                                    <div class="ulpgcds-carrusel__center">
+                                        <h2>#SerULPGC</h2>
+                                        <p><em>Por qué la ley que protegerá los gatos callejeros también ayudará a
+                                                proteger la biodiversidad,</em> artículo publicado por <strong>Octavio
+                                                Luis Pérez Luzardo</strong> en <em>The Conversation</em></p>
+                                        <a href="/noticia/2022/05/27/catedratico-ulpgc-octavio-perez-luzardo-explica-marco-legal-colonias-felinas"
+                                            class="ulpgcds-btn ulpgcds-btn--primary">Leer más</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div> <!-- /.block -->
+            <div id="block-block-20" class="block block-block wrapper">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-xxl">Formar, pensar, transformar</div>
+                        <h1 class="subtitle-l">Universidad de Las Palmas de Gran Canaria</h1>
+                    </div>
+                </div>
+
+            </div> <!-- /.block -->
+            <div id="block-block-21" class="block block-block">
+
+                <div class="block-bg">
+                    <ul class="profiles">
+                        <li><a href="/estudiantes"><strong>Estudiantes</strong></a></li>
+                        <li><a href="/pdi" title="Personal Docente e Investigador"><strong>PDI</strong></a></li>
+                        <li><a href="/pas" title="Personal de Administración y Servicios"><strong>PAS</strong></a></li>
+                        <li><a href="/empresas"><strong>Empresas</strong></a></li>
+                        <li><a href="/bolsa-empleo"><strong>Bolsa de Empleo</strong></a></li>
+                        <li id="agenda"><a href="/agenda"><img alt="Acceso agenda ULGPC"
+                                    src="https://www.ulpgc.es/sites/all/themes/ulpgc/images/agenda-animada.gif"
+                                    style="width: 100px;" /></a></li>
+                    </ul>
+                </div>
+
+            </div> <!-- /.block -->
+            <div id="block-views-carrusel-medio-portada-block-1" class="block block-views">
+
+                <div
+                    class="view view-carrusel-medio-portada view-id-carrusel_medio_portada view-display-id-block_1 wrapper view-dom-id-797c87893c75b2090c8c43f4df8c04bf">
+                    <div class="view-header">
+                        <h2>ULPGC para ti</h2>
+                        <p class="subtitle-l">La web del estudiante</p>
+                    </div>
+
+
+
+                    <div class="view-content">
+                        <ul class="row">
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgcparati.es/"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/acceso_nuevos_estudiantes_.jpg?itok=tEd9JZpl" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Acceso nuevos estudiantes</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgcparati.es/">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/acceso_nuevos_estudiantes_.jpg?itok=tEd9JZpl"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Acceso nuevos estudiantes </h3>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgcparati.es/grados"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/grados.jpg?itok=70BTGE5Z" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Grados</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgcparati.es/grados">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/grados.jpg?itok=70BTGE5Z"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Grados </h3>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgcparati.es/posgrados"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/portada-masteres.jpg?itok=-47oBk3j" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Másteres universitarios</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgcparati.es/posgrados">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/portada-masteres.jpg?itok=-47oBk3j"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Másteres universitarios </h3>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgcparati.es/doctorado/escueladedoctorado"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/doctorado.jpg?itok=u_buwl2D" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Doctorado</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgcparati.es/doctorado/escueladedoctorado">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/doctorado.jpg?itok=u_buwl2D"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Doctorado </h3>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgcparati.es/titulospropios"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/formacion-permanente_n.jpg?itok=B46woxWX" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Formación permanente</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgcparati.es/titulospropios">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/formacion-permanente_n.jpg?itok=B46woxWX"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Formación permanente </h3>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <!-- <a href="https://www.ulpgc.es/idiomas"><span class="ulpgcds-carrusel--medium__img"><img typeof="foaf:Image" src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/portada-idiomas.jpg?itok=n7MPne_v" width="420" height="240" alt="" /></span><span class="ulpgcds-carrusel--medium__txt">Idiomas</span></a> -->
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a href="https://www.ulpgc.es/idiomas">
+                                        <figure><img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_articulos/public/carrusel-medio/portada-idiomas.jpg?itok=n7MPne_v"
+                                                width="420" height="240" alt="" /></figure>
+                                        <h3>Idiomas </h3>
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="view-footer">
+                        <hr /><a href="https://www.ulpgcparati.es" class="ulpgcds-btn ulpgcds-btn--text">Visita ULPGC
+                            para ti<span class="icon-arrow-right"> </span></a>
+                    </div>
+
+
+                </div>
+            </div> <!-- /.block -->
+            <div id="block-views-af30d42daf1d655a955751079803a5db" class="block block-views wrapper">
+
+                <div
+                    class="view view-noticias-destacadas-ulpgcds view-id-noticias_destacadas_ulpgcds view-display-id-block view-dom-id-1a500f1bea094c31b1fb49d1dfce0f91">
+                    <div class="view-header">
+                        <h2>Actualidad</h2>
+                        <p class="subtitle-l">Noticias y eventos institucionales</p>
+                    </div>
+
+
+
+                    <div class="view-content">
+                        <ul class="row">
+                            <li class="col-4">
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a
+                                        href="/noticia/2022/09/25/cierran-centros-docentes-gran-canaria-abren-servicios-centrales-y-lanzarote-y">
+                                        <figure>
+                                            <img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_noticia_crop/public/ArchivosULPGC/noticia/2022/Sep/web_pensador_0.jpg?itok=0o-rLUY9"
+                                                width="600" height="400" alt="" />
+                                        </figure>
+                                        <div class="ulpgcds-article__date"><span class="date-display-single"
+                                                property="dc:date" datatype="xsd:dateTime"
+                                                content="2022-09-25T17:59:00+01:00">25 Sep 2022</span></div>
+                                        <h3>Cierran los centros docentes de Gran Canaria, abren los servicios centrales
+                                            y Lanzarote y Fuerteventura </h3>
+                                    </a>
+                                    <p>Así se ha informado en un correo del Rector a la comunidad universitaria de cara
+                                        al lunes</p>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a
+                                        href="/noticia/2022/09/15/ulpgc-lanza-nueva-tarjeta-universitaria-identificacion-virtual">
+                                        <figure>
+                                            <img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_noticia_crop/public/ArchivosULPGC/noticia/2022/Sep/foto_app_ulpgc.jpg?itok=WeieC3BG"
+                                                width="600" height="400" alt="" />
+                                        </figure>
+                                        <div class="ulpgcds-article__date"><span class="date-display-single"
+                                                property="dc:date" datatype="xsd:dateTime"
+                                                content="2022-09-15T12:38:00+01:00">15 Sep 2022</span></div>
+                                        <h3>Nueva tarjeta virtual de identificación universitaria en una aplicación
+                                            oficial </h3>
+                                    </a>
+                                    <p>Esta nueva App forma parte del proceso de modernización digital de la ULPGC</p>
+                                </article>
+                            </li>
+                            <li class="col-4">
+                                <article class="ulpgcds-article ulpgcds-article--short">
+                                    <a
+                                        href="/noticia/2022/09/19/inauguracion-exposicion-del-instituto-confucio-palmas-campus-del-obelisco">
+                                        <figure>
+                                            <img typeof="foaf:Image"
+                                                src="https://www.ulpgc.es/sites/default/files/styles/foto_noticia_crop/public/ArchivosULPGC/noticia/2022/Sep/20._expo_confucio_2.jpg?itok=zEToit2t"
+                                                width="600" height="400" alt="" />
+                                        </figure>
+                                        <div class="ulpgcds-article__date"><span class="date-display-single"
+                                                property="dc:date" datatype="xsd:dateTime"
+                                                content="2022-09-19T09:32:00+01:00">19 Sep 2022</span></div>
+                                        <h3>Exposición del Instituto Confucio “El milenario Arte de Recorte de Papel
+                                            Chino”, en Humanidades </h3>
+                                    </a>
+                                    <p>El arte del recorte de papel está en la lista del Patrimonio Cultural Inmaterial
+                                        de la Humanidad</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="view-footer">
+                        <hr /><a href="noticias" class="ulpgcds-btn ulpgcds-btn--text">Ver más noticias<i
+                                class="icon-arrow-right"> </i></a>
+                    </div>
+
+
+                </div>
+            </div> <!-- /.block -->
+            <div id="block-block-23" class="block block-block wrapper calidad-y-transparencia">
+
+                <div class="row">
+                    <div class="col-6">
+                        <h2><em>Rankings</em> y sellos&nbsp;de calidad</h2>
+                        <p class="subtitle-l">Una universidad de <strong>calidad</strong></p>
+                        <div class="contain-height">
+                            <div class="row">
+                                <div class="col-6">
+                                    <article class="ulpgcds-article"><a
+                                            class="ulpgcds-btn ulpgcds-btn--text enlace_sin_margen"
+                                            href="https://www.ulpgc.es/rankings"><img alt=""
+                                                src="https://www.ulpgc.es/sites/default/files/ArchivosULPGC/bloque-ranking/ranking.png" />
+                                            <h3>La ULPGC en los <em>rankings</em> universitarios</h3>
+                                        </a></article>
+                                </div>
+                                <div class="col-6">
+                                    <article class="ulpgcds-article"><a
+                                            class="ulpgcds-btn ulpgcds-btn--text enlace_sin_margen"
+                                            href="https://calidad.ulpgc.es/index.php/m-sgc/m-ca"
+                                            title="Nuestros sellos de calidad (abre en nueva ventana)"
+                                            target="_blank"><img alt=""
+                                                src="https://www.ulpgc.es/sites/default/files/ArchivosULPGC/bloque-ranking/aneca-enqa-eqar.png" />
+                                            <h3>Nuestros sellos de calidad</h3>
+                                        </a></article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr /><a class="ulpgcds-btn ulpgcds-btn--text" href="https://calidad.ulpgc.es/">Visita el Portal
+                            de Calidad<i class="icon-arrow-right"> </i></a>
+                    </div>
+
+                    <div class="col-6">
+                        <h2>Transparencia</h2>
+
+                        <p class="subtitle-l">Una universidad abierta</p>
+
+                        <div class="contain-height">
+                            <p>La comunidad universitaria y la sociedad en general pueden explorar los principales datos
+                                institucionales de la ULPGC de forma abierta y directa, gracias a nuestro Portal de
+                                Transparencia.</p>
+                        </div>
+
+                        <hr /><a class="ulpgcds-btn ulpgcds-btn--text" href="/transparencia">Visita el Portal de
+                            Transparencia<i class="icon-arrow-right"> </i></a>
+                    </div>
+                </div>
+
+            </div> <!-- /.block -->
+
+            <div class="ulpgcds-loader" role="alert" aria-busy="true">
+                <svg viewBox="0 0 50 50" class="spinner-2">
+                    <circle class="line" cx="25" cy="25" r="22.5" />
+                </svg>
+                <svg viewBox="0 0 50 50" class="ulpgcds-loader__logo">
+                    <path id="ulpgc-logo" class="color-logo"
+                        d="M30.349,9.034c7.141,0,10.711,5.342,10.711,11.573c0.089,2.843,0,4.46,0,8.013h-2.678c0,0-2.353,5.076,1.785,8.012c0,0.178-15.262,5.021-18.745-9.793c0,0.177,7.891,4.982,12.496,3.561c0,0,1.795-6.645,0.461-10.665c-1.727-5.203-9.349-3.744-12.952-1.655C12.472,23.273,9.633,31.325,6.248,37.523C6.248,37.523,8.47,9.034,30.349,9.034" />
+                </svg>
+            </div>
+        </div>
+        <div class="capa-menu"></div>
+        <!--fin si no es portada -->
+
+
+        <!-- Pié de pagina  -->
+        <div class="clear clearfix"></div>
+        <footer>
+            <div id="pie_pagina" class="site-footer">
+                <div id="pie_top" class="wrapper">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="footer-logo"> </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div id="block-block-12" class="block block-block columna_pie">
+
+                                        <h1>Dirección</h1>
+
+                                        <p>Juan de Quesada, 30</p>
+
+                                        <p>35001 Las Palmas de Gran Canaria</p>
+
+                                        <p>España</p>
+
+                                        <p><a href="https://goo.gl/maps/Du1BZEUTcV7586sD8">Ver en Google Maps</a></p>
+
+                                    </div> <!-- /.block -->
+                                </div>
+                                <div class="col-6">
+                                    <div id="block-block-13" class="block block-block columna_pie">
+
+                                        <h1>Servicio de información al estudiante</h1>
+
+                                        <p><strong>web:</strong> <a href="https://sie.ulpgc.es">sie.ulpgc.es</a></p>
+                                        <p><strong>correo:</strong> <a href="mailto:sie@ulpgc.es">sie@ulpgc.es</a></p>
+                                        <p><strong>tlf: </strong>(+34) 928 451072/74</p>
+
+                                        <p><strong>WhatsApp <span class="icon-whatsapp"></span></a></strong>
+                                            <A href="
+https://web.whatsapp.com/send?phone=+34660599038">
+                                                (+34)&nbsp;660&nbsp;599&nbsp;038
+                                            </A>
+                                        </p>
+
+                                    </div> <!-- /.block -->
+                                </div>
+                            </div>
+                            <div class="new-redes">
+                                <div id="block-block-2" class="block block-block">
+
+                                    <h1>Conecta con nosotros</h1>
+                                    <ul>
+                                        <li class="twitter"><a href="https://twitter.com/ulpgc"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-twitter"></i><span>Twitter</span></a>
+                                        </li>
+                                        <li class="flickr"><a href="http://www.flickr.com/photos/ulpgc"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-flickr"></i><span>Flickr</span></a>
+                                        </li>
+                                        <li class="facebook"><a
+                                                href="http://www.facebook.com/pages/Ulpgc-Para-Ti/160435343978326?sk=wall"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-facebook"></i><span>Facebook</span></a>
+                                        </li>
+                                        <li class="youtube"><a href="http://www.youtube.com/ulpgc"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-youtube"></i><span>YouTube</span></a>
+                                        </li>
+                                        <li class="linkedin"><a
+                                                href="http://www.linkedin.com/groups?mostPopular=&amp;gid=148332"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-linkedin"></i><span>LinkedIn</span></a>
+                                        </li>
+                                        <li class="instagram"><a href="https://www.instagram.com/ulpgc_para_ti"
+                                                class="ulpgcds-btn ulpgcds-btn--ghost ulpgcds-btn--icon"
+                                                target="_blank"><i
+                                                    class="ulpgcds-btn__icon ulpgcds-icon-instagram"></i><span>Instagram</span></a>
+                                        </li>
+                                    </ul>
+                                </div> <!-- /.block -->
+                            </div>
+                        </div>
+                        <div class="col-6 align-logo">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="block-block-24" class="block block-block columna_pie">
+
+                                        <h1>Contacto</h1>
+
+                                        <div>
+                                            <p><a
+                                                    href="http://www2.ulpgc.es/index.php?pagina=presentacion&amp;ver=contacto">Directorio
+                                                    telefónico</a></p>
+
+                                            <p><a href="/sori/sistema-quejas-sugerencias-y-felicitaciones">Quejas,
+                                                    sugerencias y felicitaciones</a></p>
+                                        </div>
+
+                                    </div> <!-- /.block -->
+
+                                </div>
+                                <div class="col-4">
+                                    <div id="block-block-25" class="block block-block columna_pie">
+
+                                        <h1>Servicios en línea</h1>
+
+                                        <div>
+                                            <p><a href="/campusvirtual">Campus Virtual</a></p>
+
+                                            <p><a href="https://administracion.ulpgc.es/">Sede electrónica</a></p>
+
+                                            <p><a href="https://mi.ulpgc.es">Mi ULPGC</a></p>
+
+                                            <p><a href="https://correo.ulpgc.es/">Correo ULPGC</a></p>
+
+                                            <p><a href="http://www.si.ulpgc.es/contacto">Soporte informático</a></p>
+                                        </div>
+
+                                    </div> <!-- /.block -->
+
+                                </div>
+                                <div class="col-4">
+                                    <div id="block-block-14" class="block block-block columna_pie ultima">
+
+                                        <h1>Legal</h1>
+
+                                        <div>
+                                            <p><a href="/sobre-esta-web/aviso-legal">Aviso legal</a></p>
+
+                                            <p><a href="/sobre-esta-web/tratamiento-datos-personales">Protección de
+                                                    datos</a></p>
+
+                                            <p><a href="/sobre-esta-web/cookies">Cookies</a></p>
+
+                                            <p><a href="/sobre-esta-web/accesibilidad">Accesibilidad</a></p>
+
+                                            <p><a href="/sobre-esta-web">Sobre esta web</a></p>
+                                        </div>
+
+                                    </div> <!-- /.block -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pie_colaboradores">
+                    <div class="wrapper">
+                        <div class="contenido_logos clearfix">
+                            <div id="block-block-15" class="block block-block">
+
+                                <ul class="colaboradores">
+                                    <li class="parque_cientifico"><a href="http://pct.ulpgc.es"
+                                            target="_blank"><span>Parque Científico Tecnológico Universidad de Las
+                                                Palmas de Gran Canaria</span></a></li>
+                                    <li class="consejo_social"><a href="http://www.csocial.ulpgc.es"
+                                            target="_blank"><span>Consejo Social Universidad de Las Palmas de Gran
+                                                Canaria</span></a></li>
+                                    <li class="universia"><a href="https://universia.net"
+                                            target="_blank"><span>Universia</span></a></li>
+                                    <li class="mecenas"><a href="https://www.crue.org"
+                                            target="_blank"><span>Crue</span></a></li>
+                                    <!-- &lt;li class="fundacion"&gt;&lt;a href="http://www.fulp.ulpgc.es/" target="_blank"&gt;&lt;span&gt;Fundación Universitaria de Las Palmas&lt;/span&gt;&lt;/a&gt;&lt;/li&gt; -->
+                                </ul>
+                                <div class="clearer"> </div>
+
+                            </div> <!-- /.block -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pie_final">
+                    <div class="wrapper">
+                        <!-- <a class="ateigh" href="https://ateigh.com" target="blank">Diseño: Ateigh.com</a> -->
+                        <div id="block-block-4" class="block block-block">
+
+                            <p>© Universidad de Las Palmas de Gran Canaria · ULPGC</p>
+
+                        </div> <!-- /.block -->
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>window.eu_cookie_compliance_cookie_name = "";</script>
+        <script
+            src="https://www.ulpgc.es/sites/all/modules/eu_cookie_compliance/js/eu_cookie_compliance.js?rit43t"></script>
+    </div>
+
+    <!-- Gestión de impresiones por Google Analitycs -->
+    <script>
+        var googleAccountID = "UA-38150952-1";
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+        }
+        function guid() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+        }
+        (function () {
+            var GIF = "https://ssl.google-analytics.com/collect?v=1&t=event" +
+                "&ec=print&tid=" + googleAccountID + "&cid=" + guid() +
+                "&z=" + (Math.round((new Date()).getTime() / 1000)).toString() +
+                "&ea=" + encodeURIComponent(document.title) +
+                "&el=" + encodeURIComponent(document.location.pathname);
+            var rule = "body:after{content:url(" + GIF + ")}";
+            var head = document.head || document.getElementsByTagName('head')[0];
+            var css = document.createElement('style');
+            if (css && head) {
+                css.setAttribute("type", "text/css");
+                css.setAttribute("media", "print");
+                if (css.styleSheet) { // For IE
+                    css.styleSheet.cssText = rule;
+                } else {
+                    css.appendChild(document.createTextNode(rule));
+                }
+                head.appendChild(css);
+                /* Written by Amit Agarwal - labnol.org */
+            }
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+
+        if (Drupal && Drupal.eu_cookie_compliance && Drupal.eu_cookie_compliance.getAcceptedCategories().indexOf("rendimiento") != -1) {
+            (function (h, o, t, j, a, r) {
+                h.hj =
+                    h.hj ||
+                    function () {
+                        (h.hj.q = h.hj.q || []).push(arguments);
+                    };
+                h._hjSettings = { hjid: 2351971, hjsv: 6 };
+                a = o.getElementsByTagName("head")[0];
+                r = o.createElement("script");
+                r.async = 1;
+                r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+        }
+    </script>
+
+
+
+</body>
+
+</html>
