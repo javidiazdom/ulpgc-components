@@ -1,0 +1,441 @@
+/* ------------------------------- ateigh.com ------------------------------- 
+ *
+ * Mixins
+ *
+ * ------------------------------- ateigh.com -------------------------------
+ */
+
+//https://engageinteractive.co.uk/blog/top-10-scss-mixins 
+
+@mixin center {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin wrapper{
+    max-width: $grid-max-width; 
+    @include center();
+    @include mq('m-screen',min){
+        padding-left:$grid-gutter-md/2;
+        padding-right:$grid-gutter-md/2;
+    }
+    @include mq('m-screen',max){
+        padding-left:$grid-gutter-sm/2;
+        padding-right:$grid-gutter-sm/2; 
+    }
+}
+
+@mixin wrapper-mobile{
+    margin-left:20px;
+    margin-right:20px;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// Mixin for medias query
+// @autor Jonathan Gómez
+// @access public
+// @param {length} $width min value of breakpoint
+// @param {string} $type: min, max or range values
+// @param {length} $width-max: value of max-width breakpoint range
+// @param {length} $device-width: value of breakpoint by device
+// @param {length} $device-width-max: value of breakpoint max by device
+// @example scss ussage
+//  .header{
+//     @include mq('screen-xs')
+//  }
+//  .footer{
+//     @include mq('screen-s','range','screen-m')
+//  }
+//  .header{
+//     @include mq('screen-l','max')
+//  }
+//  .header{
+//     @include mq('screen-l','max', '','landscape')
+//  }
+//
+//
+//
+
+@mixin mq($width:'s-screen', $type: max, $width-max: "", $orientation: null) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if ($width-max){
+            @if map_has_key($breakpoints, $width-max) {
+                $width-max: map_get($breakpoints, $width-max);
+            }
+        }
+    }    
+    
+    @if $type == max {
+        $width: $width - 1px;
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+    @else if $type == min {
+        @media only screen and (min-width: $width) {
+            @content;
+        }
+    }
+    @else if $type == range {
+        @media only screen and (min-width: $width) and (max-width: $width-max - 1){
+            @content;
+        }
+    }    
+    
+}
+
+
+
+// Mixin for retina medias query
+// @autor Jonathan Gómez
+// @access public
+// @param {map} $device
+// @example scss ussage
+//  .header{
+//     @include retina('phone')
+//  }
+//  .footer{
+//     @include retina(1440px) 
+//  }
+//
+//
+@mixin retina ($device){
+    @if map_has_key($devices,$device) {
+        $device: map_get($devices, $device);
+    }
+        
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: $device),
+    only screen and (-moz-min-device-pixel-ratio: 1.5) and (min-width: $device),
+    only screen and (-o-min-device-pixel-ratio: 3 / 2) and (min-width: $device),
+    only screen and (min-device-pixel-ratio: 1.5) and (min-width: $device),
+    only screen and (min-resolution: 1.5dppx) and (min-width: $device){
+            @content;
+    }
+}
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+// remove webkit glow
+@mixin remove-glow {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin visually-hidden{
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+}
+
+@mixin border-radii($topleft: null, $topright: null, $bottomright: null, $bottomleft: null) {
+  @if $topleft != null and $topleft >= 0 {
+    border-top-left-radius: $topleft;;
+    -webkit-border-top-left-radius: $topleft;
+    -moz-border-radius-topleft: $topleft;
+  }
+
+  @if $topright != null and $topright >= 0 {
+    border-top-right-radius: $topright;
+    -webkit-border-top-right-radius: $topright;
+    -moz-border-radius-topright: $topright;
+  }
+
+  @if $bottomleft != null and $bottomleft >= 0 {
+    border-bottom-left-radius: $bottomleft;
+    -webkit-border-bottom-left-radius: $bottomleft;
+    -moz-border-radius-bottomleft: $bottomleft;
+  }
+
+  @if $bottomright != null and $bottomright >= 0 {
+    border-bottom-right-radius: $bottomright;
+    -webkit-border-bottom-right-radius: $bottomright;
+    -moz-border-radius-bottomright: $bottomright;
+  }
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+       -moz-transition: $args;
+        -ms-transition: $args;
+            transition: $args;
+}
+
+@mixin flexContainer() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin align-items($value : center){
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+
+@mixin justify-content($value : flex-start) {
+    @if $value == flex-start {
+            -webkit-box-pack: start;
+               -ms-flex-pack: start;
+    } @else if $value == flex-end {
+            -webkit-box-pack: end;
+               -ms-flex-pack: end;
+    } @else if $value == space-around {
+               -ms-flex-pack: distribute;
+    } @else if $value == space-between {
+            -webkit-box-pack: justify;
+               -ms-flex-pack: justify;	
+    } @else {
+    -webkit-box-pack: $value;
+               -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value; /* Chrome 21+, Safari Not supported. */
+       -moz-justify-content: $value; /* Chrome 21+, Safari Not supported. */
+            justify-content: $value; /* Firefox 20+, Opera 12.10, IE Not supported. */
+}
+
+/// Mixin printing a linear-gradient 
+/// as well as a plain color fallback 
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }  
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+
+@mixin box-sizing($args : border-box){
+    -webkit-box-sizing: $args;
+    -moz-box-sizing: $args;
+    box-sizing: $args;
+}
+
+@mixin text-truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// breaking long strings
+@mixin break-word {
+  word-wrap: break-word; //legacy name
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@mixin appearance($appearance: none){    
+    -webkit-appearance: $appearance;
+       -moz-appearance: $appearance;
+            appearance: $appearance;
+}
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+} 
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+@mixin background($imgpath,$position:0 0,$repeat: no-repeat, $color: false) {
+    @if $color == false {
+        background: transparent image($imgpath) $repeat $position;
+    }
+    @else{
+        background: image($imgpath) $repeat $position $color;
+    }
+}
+
+// --------------------------------------------------------
+// arrows
+// --------------------------------------------------------
+// $direction: top, left, right, bottom, top-left, top-right, bottom-left, bottom-right
+// $color: hex, rgb or rbga
+// $size: px or em
+// @example
+// .element{
+//     @include arrow(top, #000, 50px);   
+// }
+@mixin arrow-triangle($direction, $color, $size){
+    display: block;
+    height: 0;
+    width: 0;
+    
+    @if $direction == 'top' {
+        border-left: $size solid transparent;
+    	border-right: $size solid transparent;
+    	border-bottom: $size solid $color;
+    } @else if $direction == 'right' {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+    	border-left: $size solid $color;
+    } @else if $direction == 'bottom' {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+    } @else if $direction == 'left' {
+        border-top: $size solid transparent;
+    	border-right: $size solid $color;
+    	border-bottom: $size solid transparent;
+    } @else if $direction == 'top-left' {
+        border-top: $size solid $color; 
+        border-right: $size solid transparent;	
+    } @else if $direction == 'top-right' {
+        border-top: $size solid $color; 
+        border-left: $size solid transparent;
+    } @else if $direction == 'bottom-left' {
+        border-bottom: $size solid $color; 
+        border-right: $size solid transparent;	
+    } @else if $direction == 'bottom-right' {
+        border-bottom: $size solid $color; 
+        border-left: $size solid transparent;
+    }
+}
+
+@mixin arrow($direction,$color,$size,$thick:1px){
+    border-bottom: $thick solid;
+    border-right: $thick solid;
+    width: $size;
+    height: $size;
+    @if ($direction == "down"){
+        @include rotate(45);
+    }
+    @else if ($direction == "right"){
+        @include rotate(-45);
+    }
+    @else if ($direction == "left"){
+        @include rotate(135);
+    }
+    @else if ($direction == "top"){
+        @include rotate(-135);
+    }
+    background: none;
+}
+
+@mixin mq-device(){
+    @media only screen and (max-width: 1125px){
+        @content;
+    }
+    @media only screen and (max-device-width: map_get($breakpoints,'l-screen')-1){
+        @content;
+    }
+}

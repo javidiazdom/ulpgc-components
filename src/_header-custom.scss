@@ -1,0 +1,24 @@
+@media only screen and (min-width: 1200px) {
+	#header #cabecera .contenido_cabecera #logo {
+		background: transparent url("../images/ULPGC-logo-ucrania-escritorio.svg") no-repeat -10px -10px;
+		background-size: 306px;
+		width: 274px;
+		margin: 24px 0 0 0;
+	}
+}
+@media only screen and (max-width: 1199px) {
+	#header #cabecera .contenido_cabecera #logo {
+		background: none;
+		margin-top: 0;
+		padding-top: 12px;
+		height: auto;
+		width: 125px;
+	}
+	#header #cabecera .contenido_cabecera #logo a {
+		background: transparent url("../images/ULPGC-logo-ucrania-movil.svg") no-repeat -6px -6px;
+		background-size: 230px;
+		width: 214px;
+		margin-top: -6px;
+		height: 34px;
+	}
+}

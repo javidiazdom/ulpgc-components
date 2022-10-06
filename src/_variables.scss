@@ -1,0 +1,284 @@
+$theme-name: "Custom theme for ULPGC design by ateigh.com";
+$theme-id: "ulpgcds";
+/* ------------------------------- ateigh.com ------------------------------- 
+ * @file
+ * Variables for #{$theme-name}
+ * ------------------------------- ateigh.com -------------------------------
+ */
+
+// Colors
+$color-blue:#0066a1;
+$color-blue-10:#E5EFF5;
+$color-blue-50:#7fb2d0;
+$color-blue-80:#3385B4;
+$color-blue-dark:#05476d;
+$color-gray:#565a5c;
+$color-gray-10:#eeeeee;
+$color-gray-20:#dddede;
+$color-gray-5:#f6f7f7;
+$color-gray-50:#aaacad;
+$color-gray-80:#787b7d;
+$color-gray-dark:#2d3133;
+$color-orange:#ffa100;
+$color-orange-10:#fff5e5;
+$color-orange-50:#ffd07f;
+$color-orange-80:#ffb433;
+$color-orange-dark:#9C6609;
+$color-red: #CB2E2D;
+$color-red-10:#F9EAEA;
+$color-red-dark: #8C290E;
+$color-white:#fff;
+$color-green:#377B33;
+$color-green-10:#EBF1EA;
+
+
+
+// general vars
+$text-color:            $color-gray;
+$background-color:      $color-white;
+$link-color:            $color-blue;
+$link-color-hover:      $color-orange;
+$link-color-focus:      $color-orange-dark;
+$link-color-visited:    $color-blue-dark;
+$white:                 #ffffff;
+$black:                 #282828;
+
+$primary-color:             $color-blue;
+$primary-color-lighter:     $color-blue-10;
+$primary-color-light:       $color-blue-50;
+$primary-color-dark:        $color-blue-dark;
+
+$secondary-color:           $color-orange; 
+$secondary-color-lighter:   $color-orange-10;
+$secondary-color-light:     $color-orange-50;
+$secondary-color-dark:      $color-orange-dark;
+
+// Background colors
+$background-color-1:      $background-color;
+$background-color-2:      $color-blue-10;
+$background-color-3:      $color-orange-10;
+
+
+// Opacity colors
+$primary-color-opacity:     rgba($primary-color,0.9);
+$secondary-color-opacity:   rgba($secondary-color,0.9);
+$overlay-opacity:           rgba($black,0.6);
+
+// Gradients use
+// @example @include linear-gradient($primary-color, $secondary-color);
+// @example @include linear-gradient(to right, $primary-color-light 0%, #primary-color 50%, $primary-color-dark 100%);
+
+//Feedback colors
+$success-color:             $color-green;
+$success-color-light:       $color-green-10;
+$danger-color:              $color-red;
+$danger-color-light:        $color-red-10;
+$warning-color:             $color-orange;
+$warning-color-light:       $color-orange-10;
+
+// Typografy
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap');
+$font-1:  'Rubik',sans-serif !default;
+$font-2:  'Open Sans',sans-serif !default;
+
+// Font weights 
+$light:     300 !default;
+$regular:   400 !default;
+$medium:    500 !default;
+$bold:      700 !default;
+$black:     900 !default;
+
+// Font sizes titles
+$font-size-xxxl:3.5rem; // 56px;
+//$font-size-xxl:2.625rem; // 42px
+$font-size-xxl:2.5rem; // 40px
+$font-size-xl:2rem; // 32px
+$font-size-l:1.5rem; // 24px
+$font-size-m:1.125rem; // 18px
+$font-size-s:1rem; // 16px
+$font-size-xs:0.875rem; // 14px
+$font-size-xxs:0.75rem; // 12px
+$font-size-inputs-icons: 1.25rem; // 20px
+$font-size-avatar-small: 1.25rem; // 20px
+
+
+// Font sizes contents
+$font-body-base:1.125rem; // 18px
+$font-body-large:1.5rem; // 24px
+$font-body-base-s: 0.875rem; //14px 
+$font-small:0.75rem; // 12px
+
+// Font size components
+$font-size-buttons: 1.125rem; // 16px // new a 18px
+$font-size-buttons-s:0.875rem; // 14px
+
+// Line heights
+$line-height-xxxl:4rem; // 64px
+$line-height-xxl:3rem; // 48px
+$line-height-xl:2.5rem; // 40px
+$line-height-l:2rem; // 32px
+$line-height-m:1.5rem; // 24px
+$line-height-s:1.25rem; // 20px
+$line-height-xs:1rem; // 16px
+$line-height-xxs:0.875rem; // 14px
+
+// Spacings used by paddings
+$spacing-xxs:4px;
+$spacing-xs:8px;
+$spacing-s:12px;
+$spacing-m:16px;
+$spacing-l:24px;
+$spacing-xl:32px;
+$spacing-xxl:40px;
+$spacing-xxxl:48px;
+
+// Layouts used by margins
+$layout-xxs:8px;
+$layout-xs:16px;
+$layout-s:24px;
+$layout-m:32px;
+$layout-l:40px;
+$layout-xl:48px;
+$layout-xxl:56px;
+$layout-xxxl:64px;
+
+// Grid
+$grid-columns:      12  !default;
+$grid-columns-m:      8  !default;
+$grid-columns-s:      4  !default;
+$grid-max-width:    1440px !default;
+$grid-max-width-m:    1200px !default;
+$grid-max-width-s:    720px !default;
+$grid-gutter:      64px !default;
+$grid-gutter-m:    64px !default;
+$grid-gutter-s:    40px !default;
+$width-wrapper: 100%;    
+
+// General margins
+$block-margin-top: 24px !default;
+$block-margin-bottom: 24px !default;
+$inputs-padding-top: 24px !default;
+$inputs-padding-bottom: 24px !default;
+
+// Generic width / min-width
+$width-numeric-input:100px;
+$min-width-input: 240px;
+
+// General paddings/widths/heights
+$btns-height:           48px !default;
+$btns-min-width:        180px !default;
+$btns-padding-top:      24px !default;
+$btns-padding-bottom:   24px !default;
+$btns-margin-top:      24px !default;
+$btns-margin-bottom:   24px !default;
+
+$header-height:128px;
+$header-height-mobile:50px;
+
+// Radius
+$radius:        4px !default;
+$xs-radius:      2px !default;
+$btn-radius:    $radius !default;
+$btn-xs-radius: $xs-radius !default;
+
+// Time Animations
+$animation-time: 0.2s;
+$animation-type: ease-in-out; 
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'xs-screen':  320px,
+  's-screen':   720px,
+  'm-screen':   960px,
+  'fix-header': 1150px,
+  'l-screen':   1200px,
+  'xl-screen':  1440px,
+) !default;
+
+/// Retina devices
+$devices: (
+    'phone':    320px,
+    'tablet':   768px,
+    'desktop':  1200px,
+) !default;
+
+$z-indexes: (
+    'default':      1,
+    'navigation':   400,
+    'header':       300,
+    'footer':       200,
+    'modal':        500,
+    'bellow':       -1,    
+) !default;
+
+// Base url
+$base-url: '../' !default;
+
+// Fonts family
+$icomoon-font-family: "ULPGC-icon" !default;
+$icomoon-font-path: "../fonts" !default;
+
+// Icons
+$icon-add-file: "\e900";
+$icon-add-group: "\e901";
+$icon-add-image: "\e902";
+$icon-add-user: "\e903";
+$icon-add: "\e904";
+$icon-alert: "\e905";
+$icon-arrow-down: "\e906";
+$icon-arrow-left: "\e907";
+$icon-arrow-right: "\e908";
+$icon-arrow-up: "\e909";
+$icon-audio: "\e90a";
+$icon-book: "\e90b";
+$icon-calendar: "\e90c";
+$icon-campus: "\e90d";
+$icon-caret-down: "\e90e";
+$icon-caret-left: "\e90f";
+$icon-caret-right: "\e910";
+$icon-caret-up: "\e911";
+$icon-check: "\e912";
+$icon-chevron-down: "\e913";
+$icon-chevron-left: "\e914";
+$icon-chevron-right: "\e915";
+$icon-chevron-up: "\e916";
+$icon-clock: "\e917";
+$icon-close: "\e918";
+$icon-code: "\e919";
+$icon-dots: "\e91a";
+$icon-download: "\e91b";
+$icon-edit: "\e91c";
+$icon-envelope: "\e91d";
+$icon-expand: "\e91e";
+$icon-facebook: "\e91f";
+$icon-file: "\e920";
+$icon-filter: "\e921";
+$icon-flickr: "\e922";
+$icon-folder: "\e923";
+$icon-group: "\e924";
+$icon-image: "\e925";
+$icon-info: "\e926";
+$icon-instagram: "\e927";
+$icon-less: "\e928";
+$icon-linkedin: "\e929";
+$icon-lock: "\e92a";
+$icon-menu: "\e92b";
+$icon-miulpgc: "\e92c";
+$icon-more: "\e92d";
+$icon-phone: "\e92e";
+$icon-place: "\e92f";
+$icon-play: "\e930";
+$icon-power: "\e931";
+$icon-remove: "\e932";
+$icon-search: "\e933";
+$icon-sort: "\e934";
+$icon-thinker: "\e935";
+$icon-twitter: "\e936";
+$icon-upload: "\e937";
+$icon-user: "\e938";
+$icon-whatsapp: "\e939";
+$icon-youtube: "\e93a";
